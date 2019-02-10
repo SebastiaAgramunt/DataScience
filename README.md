@@ -1,6 +1,6 @@
-# Project Title
+# Data Science Portfolio
 
-A small portfolio to show and practice data science. The project also contains a lightweight Dockerfile for your projects on data science.
+A small portfolio to show and practice data science. This project is also aimed to help data scientist to get introduced to Docker on the specific field of data science.
 
 ## Getting Started
 
@@ -50,7 +50,7 @@ To know which containers are up just type in your command line
 docker ps -a
 ```
 
-![](../images/docker_ps.png)
+![](./images/docker_ps.png)
 
 In the image above I show my output example. To stop and delete the container:
 
@@ -71,7 +71,7 @@ To find out about all the images that we have we would run
 docker images
 ```
 
-![](../images/docker_images.png)
+![](./images/docker_images.png)
 
 In this case we have only two images. To delete *datascience* image we would run
 
