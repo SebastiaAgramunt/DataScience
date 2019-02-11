@@ -34,6 +34,8 @@ docker run -d -v $(pwd):/home/ -p 8888:8888 --name notebook -i datascience
 
 This will map our current directory volume to home in the container, also expose the 8888 port (regular port for Jupyter Notebook). The name of the container is *notebook* and the image that is build from is *datascience* (the one we've just created). As before, you could simply run ```run.sh``` which contains the same commands.
 
+If you want to run the docker file into different folder just change the volume mapping (e.g. ```-v /home/Documents/notebooks:/home/```) when running the image. Remember to change the name ```--name``` before creating a new container (do not name it the same).
+
 ## Accessing the notebooks
 
 If the two previous sections were completed successfully you should have a docker container named *notebook* running. To access the notebooks just open in your browser
