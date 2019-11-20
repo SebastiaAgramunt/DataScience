@@ -15,74 +15,43 @@ docker --version
 ```
 It's been tested on  ```Docker version 18.09.0``` but upper versions may work as well.
 
-### Installing
-
-Build the docker image as 
-
-```sh
-docker build -t datascience .
-```
-In this example I tagged the name of the image as *datascience*. It also is possible to execute the bash script ```build.sh```. Next, we need to start the container.
 
 ### Running
 
-After successfully installing the image we run the docker container.
+In the main folder run
 
 ```sh
-docker run -d -v $(pwd):/home/ -p 8888:8888 --name notebook -i datascience
+make build-run
 ```
 
-This will map our current directory volume to home in the container, also expose the 8888 port (regular port for Jupyter Notebook). The name of the container is *notebook* and the image that is build from is *datascience* (the one we've just created). As before, you could simply run ```run.sh``` which contains the same commands.
-
-If you want to run the docker file into different folder just change the volume mapping (e.g. ```-v /home/Documents/notebooks:/home/```) when running the image. Remember to change the name ```--name``` before creating a new container (do not name it the same).
+This will create the image and run the container. By default image name is *datascience* and container name *notebook*. 
 
 ## Accessing the notebooks
 
-If the two previous sections were completed successfully you should have a docker container named *notebook* running. To access the notebooks just open in your browser
+After making the *build-run* you should have a docker container named *notebook* running. To access the notebooks just open in your browser
 
 ```
 http://localhost:8888/
 ```
 
-## Stopping containers and deleting images
+And play!.
 
-To know which containers are up just type in your command line
+## Stopping container and deleting image
 
-```sh
-docker ps -a
+If you just want to stop the running container type
+
+```
+make stop
 ```
 
-![](./images/docker_ps.png)
+To restart the container run
 
-In the image above I show my output example. To stop and delete the container:
-
-```sh
-docker stop notebook
 ```
-we could also do the same but instead of *notebook* just put the container id. We could start the container with ```docker start notebook```. Once the container is stopped we could delete it as
-
-```sh
-docker rm notebook
-```
-or doing the same with the container id.
-
-
-To find out about all the images that we have we would run
-
-```sh
-docker images
+make start
 ```
 
-![](./images/docker_images.png)
+but if you want to get rid of everything in this project (images and containers), i.e. remove them, then type
 
-In this case we have only two images. To delete *datascience* image we would run
-
-```sh
-docker rmi datascience
 ```
-
-or alternatively ```docker rmi cd9c6406c1de``` or ```docker rmi datascience:latest```. The last option is useful if there are more versions of *datascience* image, then we need to add the tag.
-
-
-
-
+make remove
+```
