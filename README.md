@@ -13,7 +13,7 @@ Make sure you have installed [Docker](https://www.docker.com/get-started) in you
 ```sh 
 docker --version
 ```
-It's been tested on  ```Docker version 18.09.0``` but upper versions may work as well.
+It's been tested on  ```Docker version 19.03.5``` but upper versions may work as well.
 
 
 ### Running
@@ -55,3 +55,7 @@ but if you want to get rid of everything in this project (images and containers)
 ```
 make remove
 ```
+
+## Running on local Python environment
+
+If you prefer to work in your local machine and create a new environment, the best is to use *pyenv* and *virtualenvwrapper*. A full detailed tutorial is written [here](https://gist.github.com/SebastiaAgramunt/5185ccf8637e69f611bd1217a98289b2) for a MacOS machine.  
