@@ -8,10 +8,6 @@ COPY requirements.txt /tmp/
 RUN pip install --upgrade pip
 RUN pip install --requirement /tmp/requirements.txt
 
-# Installing requirements
-RUN apt-get install cron -yqq \
-    curl
-
 # Setting Working Directory
 WORKDIR /home
 
